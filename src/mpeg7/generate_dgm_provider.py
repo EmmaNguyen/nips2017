@@ -10,6 +10,7 @@ from ..sharedCode.provider import Provider
 from ..sharedCode.generate_dgm_provider_shapes import *
 
 
+
 def job(args):
     sample_file_path = args['sample_file_path']
     label = args['label']
@@ -92,4 +93,3 @@ def generate_dgm_provider(data_path, output_path, number_of_directions, n_cores=
 
     if len(errors) > 1:
         print(errors)
-

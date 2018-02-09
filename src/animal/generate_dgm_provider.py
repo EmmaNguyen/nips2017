@@ -2,6 +2,8 @@ import multiprocessing
 import scipy.misc
 import scipy.ndimage
 import os
+import imageio
+import skimage.io
 
 from src.sharedCode.fileSys import Folder
 from src.sharedCode.gui import SimpleProgressCounter
@@ -20,7 +22,7 @@ def job(args):
     number_of_directions = args['number_of_directions']
     return_value = {'label': label, 'sample_id': sample_id, 'dgms': {}}
 
-    img = scipy.misc.imread(sample_file_path, flatten=True)
+    img = skimage.io.imread(sample_file_path)
     img = reduce_to_largest_connected_component(img)
     try:
         npht = get_npht(img, number_of_directions)
@@ -106,4 +108,3 @@ def generate_dgm_provider(data_path, output_file_path, number_of_directions, n_c
             for k, v in errors:
                 f.write(k)
                 f.write(str(v))
-

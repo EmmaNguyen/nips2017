@@ -24,7 +24,6 @@ def job(args):
 
     img = skimage.io.imread(sample_file_path)
     img = reduce_to_largest_connected_component(img)
-    
     try:
         npht = get_npht(img, number_of_directions)
 

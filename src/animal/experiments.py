@@ -23,13 +23,14 @@ def _parameters():
         'lr_start': 0.1,
         'lr_ep_step': 20,
         'lr_adaption': 0.5,
-        'test_ratio': 0.1,
+        'test_ratio': 0.5,
         'batch_size': 128,
         'cuda': False
     }
 
 
 def _data_setup(params):
+    print(params)
     view_name_template = 'dim_0_dir_{}'
     subscripted_views = sorted([view_name_template.format(i) for i in range(32)])
     assert (str(len(subscripted_views)) in params['data_path'])

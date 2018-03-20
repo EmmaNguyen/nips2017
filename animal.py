@@ -25,7 +25,7 @@ if __name__ == '__main__':
         choice = ask_user_for_provider_or_data_set_download()
 
         if choice == "download_data_set":
-            download_raw_data("animal")
+            # download_raw_data("animal")
             generate_dgm_provider(raw_data_path,
                                   provider_path,
                                   32)
@@ -51,4 +51,3 @@ if __name__ == '__main__':
             f.write('Run {}: {}\n'.format(i, r))
         f.write('\n')
         f.write('mean: {}\n'.format(np.mean(accuracies)))
-
